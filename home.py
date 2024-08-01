@@ -19,7 +19,7 @@ with st.container():
     # response = requests.get(url)
     # col_2.image(response.content)
 
-    col_2.image('Images\Anime_Profile_Logo.png')
+    col_2.image('Images/Anime_Profile_Logo.png')
 
     with col_4:
         st.write("""
@@ -47,7 +47,7 @@ if selected == 'About':
 
     with col_1:
         # st.image('https://drive.google.com/file/d/1eWUshUiePeYndhcbEZFjw2a0_lgflvGB/view?usp=sharing', use_column_width=True)
-        st.image('Images\Anime_Profile_Logo.png')
+        st.image('Images/Anime_Profile_Logo.png')
     
     with col_2:
 
