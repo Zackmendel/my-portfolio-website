@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as components
-import requests
+import time
 
 
 st.set_page_config(layout= 'wide')
@@ -51,7 +51,7 @@ if selected == 'About':
     
     with col_2:
 
-        with st.container():
+        with st.container(border=True):
             selected = option_menu(
                 menu_title= None,
                 options= ['Professional Bio', 'Education', 'Skills', 'Experience', 'Achievements', 'Future Plans'],
@@ -60,36 +60,66 @@ if selected == 'About':
             # Professional Bio
             # ---------------------------------------------------------------------------------------------------
         if selected == 'Professional Bio':
+
             with col_4:
-                col_x, col_xx, col_xxx = st.columns([1,2, 1])
-                col_xx.subheader(':red[Professional Bio]') 
-            with st.container():
-                with col_4:
-                    st.write("""
-###### Isaac Samuel is a skilled web3 data analyst and reviewer at Flipside Crypto. With three years of experience in the field, he possesses professional-level skills in SQL, Python, and Microsoft Office tools, along with basic skills in Power BI, project management (DEXA certified), HTML, and CSS.
-###### Isaac has achieved significant milestones in his career, including winning top place in an Arbitrum data analytics grant program challenge, where he showcased his comprehensive Streamlit analytics dashboard against several top web3 analysts. He has also secured top place in Uniswap's analytics monthly contest and has earned multiple top 3 rankings. His expertise and contributions have led to him being appointed as a reviewer at Flipside Crypto, a leading web3 analytics and data provider.
-###### Currently enrolled in the ALX data analytics program, Isaac's ambition to enhance his analytical skills continues to grow. He is also pursuing a Master's in Data Analytics and aspires to work on innovative projects like Seoul's Brain project, an AI model designed to solve traffic congestion problems.
-###### Isaac Samuel is dedicated to leveraging his data expertise to drive impactful solutions and is always eager to embrace new challenges in the ever-evolving field of data analytics.
-""")
+                with st.container(border=True):
+                    col_x, col_xx, col_xxx = st.columns([1.5, 2, 1])
+                    col_xx.subheader(':red[Professional Bio]') 
+                    
+    #                     st.write("""
+    # ###### Isaac Samuel is a skilled web3 data analyst and reviewer at Flipside Crypto. With three years of experience in the field, he possesses professional-level skills in SQL, Python, and Microsoft Office tools, along with basic skills in Power BI, project management (DEXA certified), HTML, and CSS.
+    # ###### Isaac has achieved significant milestones in his career, including winning top place in an Arbitrum data analytics grant program challenge, where he showcased his comprehensive Streamlit analytics dashboard against several top web3 analysts. He has also secured top place in Uniswap's analytics monthly contest and has earned multiple top 3 rankings. His expertise and contributions have led to him being appointed as a reviewer at Flipside Crypto, a leading web3 analytics and data provider.
+    # ###### Currently enrolled in the ALX data analytics program, Isaac's ambition to enhance his analytical skills continues to grow. He is also pursuing a Master's in Data Analytics and aspires to work on innovative projects like Seoul's Brain project, an AI model designed to solve traffic congestion problems.
+    # ###### Isaac Samuel is dedicated to leveraging his data expertise to drive impactful solutions and is always eager to embrace new challenges in the ever-evolving field of data analytics.
+    # """)
+                        
+                    streams = """
+    ###### Isaac Samuel is a skilled web3 data analyst and reviewer at Flipside Crypto. With three years of experience in the field, he possesses professional-level skills in SQL, Python, and Microsoft Office tools, along with basic skills in Power BI, project management (DEXA certified), HTML, and CSS.
+    ###### Isaac has achieved significant milestones in his career, including winning top place in an Arbitrum data analytics grant program challenge, where he showcased his comprehensive Streamlit analytics dashboard against several top web3 analysts. He has also secured top place in Uniswap's analytics monthly contest and has earned multiple top 3 rankings. His expertise and contributions have led to him being appointed as a reviewer at Flipside Crypto, a leading web3 analytics and data provider.
+    ###### Currently enrolled in the ALX data analytics program, Isaac's ambition to enhance his analytical skills continues to grow. He is also pursuing a Master's in Data Analytics and aspires to work on innovative projects like Seoul's Brain project, an AI model designed to solve traffic congestion problems.
+    ###### Isaac Samuel is dedicated to leveraging his data expertise to drive impactful solutions and is always eager to embrace new challenges in the ever-evolving field of data analytics.
+    """
+                        
+                    def stream_data():
+                            for word in streams.split(" "):
+                                yield word + " "
+                                time.sleep(0.07)
+
+                    st.write_stream(stream_data)
+
+                    
+
+
+
             # Education
             # ---------------------------------------------------------------------------------------------------
         if selected == 'Education':                
             with col_4:
-                col_x, col_xx, col_xxx = st.columns([1,2, 1])
-                col_xx.subheader(':red[INSTITUTIONS]')
+                with st.container(border=True):
+                    col_x, col_xx, col_xxx = st.columns([1,2, 1])
+                    col_xx.subheader(':red[INSTITUTIONS]')
 
-                st.write("""
+                    st.write("""
 
 #### :blue[B.Eng, Federal University of Technology, Minna]
 ##### 2023, Second Class (Upper Division)  
                          
 """)
+                with st.container(border=True, height= 300):
                 
-                col_x, col_xx, col_xxx = st.columns([1,2, 1])
-                col_xx.subheader(':red[PROFESSIONAL COURSES]')
-                st.write("""
+                    col_x, col_xx, col_xxx = st.columns([1,2, 1])
+                    col_xx.subheader(':red[PROFESSIONAL COURSES]')
+                    st.write("""
 
-#### :blue[DEXA Project Management Course]
+- #### :blue[DEXA Project Management Course], 
+    - ######    @:green[DEXA],
+- #### :blue[Data Storytelling with Microsoft PowerBI], 
+    - ######   @:green[Side Hustle],
+- #### :blue[Data Analysis Internship], 
+    - ######   @:green[MetricsDAO],
+- #### :blue[Data Analysis(Beginners Guide)], 
+    - ######   @:green[Flipsidecrypto]
+
                          
 """)
                 
@@ -97,10 +127,11 @@ if selected == 'About':
             # ---------------------------------------------------------------------------------------------------
         if selected == 'Skills':                
             with col_4:
-                col_x, col_xx, col_xxx = st.columns([1,2, 1])
-                col_xx.subheader(':red[SKILLS]')
+                with st.container(border=True, height=360):
+                    col_x, col_xx, col_xxx = st.columns([1,2, 1])
+                    col_xx.subheader(':red[SKILLS]')
 
-                st.write("""
+                    st.write("""
 
 - SQL
 - Python
@@ -144,10 +175,11 @@ if selected == 'About':
             # ---------------------------------------------------------------------------------------------------
         if selected == 'Future Plans': 
             with col_4:
-                col_x, col_xx, col_xxx = st.columns([1,2, 1])
-                col_xx.subheader(':red[GOALS AND ASPIRATIONS]')  
-            with col_4:
-                st.write("""
+                with st.container(border=True, height=360):
+                    col_x, col_xx, col_xxx = st.columns([0.8, 2, 0.5])
+                    col_xx.subheader(':red[GOALS AND ASPIRATIONS]')  
+            
+                    st.write("""
 
 - Currently enrolled in the ALX data analytics program to enhance analytics skills.
 - Pursuing a Master's in Data Analytics.
