@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as components
 import time
+from st_social_media_links import SocialMediaIcons
 
 
 st.set_page_config(layout= 'wide')
@@ -27,6 +28,21 @@ with st.container():
     ## Isaac Samuel
     ### Civil Engineer & Data Analyst
     """)
+
+#     with col_5:
+#         social_media_links = [
+#     "https://www.facebook.com/ThisIsAnExampleLink",
+#     "https://www.youtube.com/ThisIsAnExampleLink",
+#     "https://www.instagram.com/ThisIsAnExampleLink",
+#     "https://www.github.com/jlnetosci/st-social-media-links",
+#     "https://x.com/Zackmendel_",
+#     "https://flipsidecrypto.xyz/zackmendel/dashboards"
+#     "234isaacsamuel@gmail.com"
+# ]
+
+#         social_media_icons = SocialMediaIcons(social_media_links)
+
+#         social_media_icons.render()
 
 
 # Horizontal Bar Container
@@ -191,9 +207,99 @@ if selected == 'About':
 #  Selecting Projects Options 
 # ------------------------------------------------------------------------------------------------------------------------------------------
 if selected == 'Projects':
-    st.write("""
-## Projects
-""")
+
+    # EIP-4844 Blob Megadashboard
+    # -------------------------------------------------------------------------------------------------------------------------------
+
+    with st.container(border= True):
+        col_1, col_2, col_3 = st.columns([3, 1.9, 1.7], gap= 'medium', vertical_alignment="top")
+        with col_1:
+            col_x, col_xx = st.columns([0.5, 3], gap= 'medium', vertical_alignment="top")
+            with col_x:
+                with st.container(border= True, height=70):
+                    st.markdown('### 1️⃣')
+
+            with col_xx:
+                with st.container(border= True, height=70):
+                    # col_x, col_xx, col_xxx = st.columns([0.4, 4, 1], gap= 'medium', vertical_alignment="top")
+                    # col_a.header(':red[1.]')
+                    st.markdown('### :red[EIP-4844 Blob Megadashboard] [🔗](https://flipsidecrypto.xyz/zackmendel/eip-4844-blob-megadashboard-1e6Rzd)')
+
+            with st.container(border= True, height=315):
+                st.markdown("""
+    he recent Dencun upgrade(March 13)to the Ethereum network has ushered in a transformative change with the activation of EIP-4844, also known as Shard Blob Transactions. This Ethereum Improvement Proposal introduces a novel transaction type designed to enhance the scalability and efficiency of the Ethereum blockchain, paving the way for broader adoption and innovation within the ecosystem.
+
+    :blue[This dashboard tracks important metrics about Blobs using on-chain metrics.]
+    """)
+
+
+        with col_2:                      
+            with st.container(border= True, height=400):
+                help_text = """
+    This dashboard tracks important metrics about Blobs using on-chain metrics.
+    """
+                textt = """
+    The recent Dencun upgrade(March 13)to the Ethereum network has ushered in a transformative change with the activation of EIP-4844, also known as Shard Blob Transactions. This Ethereum Improvement Proposal introduces a novel transaction type designed to enhance the scalability and efficiency of the Ethereum blockchain, paving the way for broader adoption and innovation within the ecosystem.
+
+    :blue[This dashboard tracks important metrics about Blobs using on-chain metrics.]
+    """
+                st.link_button("Flipside Dashboard", "https://flipsidecrypto.xyz/zackmendel/eip-4844-blob-megadashboard-1e6Rzd", help= help_text, use_container_width=True)
+                st.image('Images/EIP_4844_Blob Megadashboard_copy.png')
+                # with st.expander('Summary'):
+                #     st.write(textt)
+
+
+        with col_3:
+            with st.container(border= True, height=400):
+                st.link_button("Twitter(X) Thread", "https://x.com/Zackmendel_/status/1800495312651575369", help= help_text, use_container_width=True)
+                # Enbed Twitter(X) Thread
+                components.html('<blockquote class="twitter-tweet"><p lang="en" dir="ltr">1/ 🧵Analyzing the impact of EIP-4844 blobs on <a href="https://twitter.com/ethereum?ref_src=twsrc%5Etfw">@ethereum</a> Layer 2 solutions! 🚀<br><br>We compared blob submitters (Arbitrum , Base , Blast, Optimism ) with non-blob submitters (Polygon , Avalanche , BSC ).<br><br>Thanks to <a href="https://twitter.com/flipsidecrypto?ref_src=twsrc%5Etfw">@flipsidecrypto</a> for the data! 📊✨<br><br>Here are the key findings. 📊 <a href="https://t.co/N3RLYa6qYS">pic.twitter.com/N3RLYa6qYS</a></p>&mdash; Samuel Isaac (@Zackmendel_) <a href="https://twitter.com/Zackmendel_/status/1800495312651575369?ref_src=twsrc%5Etfw">June 11, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>', scrolling= True, height=300)
+
+
+    # 🦄 User Behaviour on Fee Changes
+    # -------------------------------------------------------------------------------------------------------------------------------
+
+    with st.container(border= True):
+        col_1, col_2, col_3 = st.columns([3, 1.9, 1.7], gap= 'medium', vertical_alignment="top")
+        with col_1:
+            col_x, col_xx = st.columns([0.5, 3], gap= 'medium', vertical_alignment="top")
+            with col_x:
+                with st.container(border= True, height=70):
+                    st.markdown('### 2️⃣')
+
+            with col_xx:
+                with st.container(border= True, height=70):
+                    # col_x, col_xx, col_xxx = st.columns([0.4, 4, 1], gap= 'medium', vertical_alignment="top")
+                    # col_a.header(':red[1.]')
+                    st.markdown('### :red[🦄 User Behaviour on Fee Changes] [🔗](https://flipsidecrypto.xyz/zackmendel/user-behaviour-on-fee-changes-bl3gow)')
+
+            with st.container(border= True, height=315):
+                st.markdown("""
+ In recent months, Uniswap Labs has made significant changes to its fee structure, impacting users of its frontend interface. Initially, in October, a 0.15% fee was introduced for those using the Uniswap frontend (Link). This fee was further increased to 0.25% in April (Link). These changes have sparked discussions and analyses regarding their impact on Uniswap's overall performance and user behavior.
+
+This analysis aims to delve into the effects of these fee changes on Uniswap's trading volume, user base, and swap activity. Key questions include whether the fee introduction and subsequent increase led to a decrease in the usage of the Uniswap Labs frontend, and if so, what alternatives users turned to. Additionally, the analysis will explore any noticeable differences in behavior between different user groups, such as whales versus smaller traders.
+
+The following sections present the findings of this analysis, providing insights into the impact of the fee changes and offering recommendations based on the observed trends and data.
+
+NOTE: The networks used for this analysis are: Ethereum, Polygon, Optimism, Arbitrum One, Base, Avalanche and Blast
+    """)
+
+
+        with col_2:                      
+            with st.container(border= True, height=400):
+                help_text = """
+    The analysis indicates that Uniswap's fee hikes have not significantly deterred user activity, with trading volumes and user retention remaining robust. However, market conditions play a substantial role in user behavior.
+    """
+                st.link_button("Flipside Dashboard", "https://flipsidecrypto.xyz/zackmendel/user-behaviour-on-fee-changes-bl3gow", help= help_text, use_container_width=True)
+                st.image('Images/EIP_4844_Blob Megadashboard_copy.png')
+
+
+        with col_3:
+            with st.container(border= True, height=400):
+                st.link_button("Twitter(X) Thread", "https://x.com/Zackmendel_/status/1814316656300011810", help= help_text, use_container_width=True)
+                # Enbed Twitter(X) Thread
+                components.html('<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🧵 Thread: The Impact of Uniswap&#39;s Fee Changes 🧵<br><br>1/ Uniswap introduced a 0.15% interface fee in October, later increased to 0.25% in April. Since the first hike, Uniswap generated $747.5M from a $370.8B volume with 104.5M swaps on Arbitrum, Avalanche, BSC, Base, Ethereum,… <a href="https://t.co/zRBovn4k8I">pic.twitter.com/zRBovn4k8I</a></p>&mdash; Samuel Isaac (@Zackmendel_) <a href="https://twitter.com/Zackmendel_/status/1814316656300011810?ref_src=twsrc%5Etfw">July 19, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>', scrolling= True, height=300)
+
 
 
 
