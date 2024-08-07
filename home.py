@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as components
 import time
-from st_social_media_links import SocialMediaIcons
+# from st_social_media_links import SocialMediaIcons
 
 
 st.set_page_config(layout= 'wide')
