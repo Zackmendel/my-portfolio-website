@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as components
 import time
-# from st_social_media_links import SocialMediaIcons
+from st_social_media_links import SocialMediaIcons
 
 
 st.set_page_config(layout= 'wide')
@@ -99,7 +99,7 @@ if selected == 'About':
                     def stream_data():
                             for word in streams.split(" "):
                                 yield word + " "
-                                time.sleep(0.07)
+                                time.sleep(0.04)
 
                     st.write_stream(stream_data)
 
@@ -309,29 +309,46 @@ if selected == 'Contacts':
     st.write("""
 ## Contacts
 """)
-    with st.container():
     # col_1, col_2, col_3, col_4, col_5 = st.columns([2, 0.1, 2, 0.1, 2], vertical_alignment= 'top')
-        col_1, col_2, col_3 = st.columns(3, gap= 'medium', vertical_alignment= 'top')
-        col_1.write("""
-    #### 📧Email: 234isaacsamuel@gmail.com
-    """)
-        col_1.write("""
-    ### ☎️ Phone No: 07087212243
-    """)
-        
-        col_2.write("""
-    ### ⬢ [Flipsidecrypto](https://flipsidecrypto.xyz/zackmendel/dashboards)
-    """)
-        col_2.write("""
-    ### 🇮🇳 [Linkedin](https://www.linkedin.com/in/zackmendel/)
-    """)
-        
-        col_3.write("""
-    ### ✖ Twitter(X): [@zackmendel_](https://x.com/Zackmendel_)
-    """)
-        col_3.write("""
-    ### 🧊 Medium: [Isaacsamuel](https://medium.com/@samuelisaac1995/tracking-the-impact-of-eip-4844-a-deep-dive-into-blob-transactions-on-ethereum-2902b4d096da)
-    """)
-        
+    col_1, col_2, col_3 = st.columns(3, gap= 'medium', vertical_alignment= 'top')
+    with col_1:
+        with st.container(border= True):
+            st.write("""
+##### 📧Email: 234isaacsamuel@gmail.com
+""")
+        with st.container(border= True):
+            st.write("""
+##### ☎️ Phone No: 07087212243
+""")
+    
 
-        
+    with col_2:
+        with st.container(border=True):
+#             st.write("""
+# ### ⬢ [Flipsidecrypto](https://flipsidecrypto.xyz/zackmendel/dashboards)
+# """)
+            st.link_button("⬢ Flipside Profile", "https://flipsidecrypto.xyz/zackmendel/dashboards", help= 'Flipside profile', use_container_width=True)
+#             st.write("""
+# ### 🇮🇳 [Linkedin](https://www.linkedin.com/in/zackmendel/)
+# """)
+            st.link_button("🇮🇳 Linkedin Profile", "https://www.linkedin.com/in/zackmendel/", help= 'Linkedin profile', use_container_width=True)
+            
+
+
+    with col_3:
+    
+        with st.container(border=True):
+            st.link_button("Twitter(✖) Profile", "https://x.com/Zackmendel_", help= 'Twitter(X) profile', use_container_width=True)
+
+            st.link_button("Medium Profile 🧊", "https://medium.com/@samuelisaac1995/tracking-the-impact-of-eip-4844-a-deep-dive-into-blob-transactions-on-ethereum-2902b4d096da", help= 'Medium profile', use_container_width=True)
+
+
+#             col_3.write("""
+# ### ✖ Twitter(X): [@zackmendel_](https://x.com/Zackmendel_)
+# """)
+#             col_3.write("""
+# ### 🧊 Medium: [Isaacsamuel](https://medium.com/@samuelisaac1995/tracking-the-impact-of-eip-4844-a-deep-dive-into-blob-transactions-on-ethereum-2902b4d096da)
+# """)
+    
+
+    
